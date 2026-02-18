@@ -1,7 +1,46 @@
+/**
+ * ============================================================
+ * MAIN CLASS - UseCase1PalindromeApp
+ * ============================================================
+ *
+ * Use Case 1: Application Entry & Welcome Message
+ *
+ * Description:
+ * This class represents the entry point of the
+ * Palindrome Checker Management System.
+ *
+ * At this stage, the application:
+ * - Starts execution from the main() method
+ * - Displays a welcome message
+ * - Shows application version
+ *
+ * No palindrome logic is implemented yet.
+ *
+ * The goal is to establish a clear startup flow.
+ *
+ * @author raghav
+ * @version 1.0
+ */
+
 public class PalindoroneCheckApp {
-    public static void main(String[] args){
-        System.out.println("welcome to palindrome checker app management system");
-        System.out.println("modify this logic to use case 2");
-        System.out.println("system runned succesfully");
+
+    /**
+     * Application entry point.
+     *
+     * This is the first method executed by the JVM
+     * when the program starts.
+     *
+     * @param args Command-line arguments
+     */
+    public static void main(String[] args) {
+
+        // Display application welcome message
+        System.out.println("Welcome to the Palindrome Checker Management System");
+
+        // Display application version
+        System.out.println("Version : 1.0");
+
+        // Indicate successful initialization
+        System.out.println("System initialized successfully.");
     }
 }
