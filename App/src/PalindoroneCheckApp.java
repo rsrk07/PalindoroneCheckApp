@@ -1,66 +1,77 @@
+import java.util.Scanner;
+
 /**
  * ============================================================
- * MAIN CLASS - UseCase8PalindromeCheckerApp
- * ============================================================
- *
- * Use Case 8: Linked List Based Palindrome Checker
+ * MAIN CLASS : UseCase11PalindromeCheckerApp
+ * Use Case 11 : Object-Oriented Palindrome Service
  *
  * Description:
- * This class checks whether a string is a palindrome
- * using a LinkedList.
- *
- * Characters are added to the list and compared by
- * removing elements from both ends:
- *   - removeFirst()
- *   - removeLast()
- *
- * Demonstrates how LinkedList supports double-ended
- * operations for symmetric validation.
+ * Demonstrates palindrome validation using OOP design.
+ * The palindrome logic is encapsulated inside
+ * the PalindromeService class.
  * ============================================================
  */
-
-import java.util.LinkedList;
 
 public class PalindoroneCheckApp {
 
     /**
-     * Application entry point for UC8
+     * Application entry point for UC11
      * @param args Command-line arguments
      */
-    public static String check(String input){
-
-        // Create LinkedList to store characters
-        LinkedList<Character> list = new LinkedList<>();
-
-        // Add each character to the linked list
-        for (char c : input.toCharArray()) {
-            if (c != ' ') {
-                list.add(c);
-            }
-        }
-
-        // Flag to track palindrome state
-        String isPalindrome = "true";
-
-        // Compare characters from both ends
-        while (list.size() > 1) {
-
-            char first = list.removeFirst();
-            char last  = list.removeLast();
-            if (first != last) {
-                isPalindrome = "false";
-                break;
-            }
-        }
-        return isPalindrome ;
-    }
     public static void main(String[] args) {
 
-        // Define the input string
-        String input = "a man a plan a canal panama";
-        String isPalindrome =check(input);
+        Scanner scanner = new Scanner(System.in);
+
+        // Take input from user
+        System.out.print("Input : ");
+        String input = scanner.nextLine();
+
+        // Create service object
+        PalindromeService service = new PalindromeService();
+
+        // Call palindrome check
+        boolean result = service.checkPalindrome(input);
+
         // Display result
-        System.out.println("Input : " + input);
-        System.out.println("Is Palindrome? : " + isPalindrome);
+        System.out.println("Is Palindrome? : " + result);
+
+        scanner.close();
+    }
+}
+
+/**
+ * Service class that contains palindrome logic.
+ */
+class PalindromeService {
+
+    /**
+     * Checks whether the input string is a palindrome.
+     *
+     * @param input Input string
+     * @return true if palindrome, false otherwise
+     */
+    public boolean checkPalindrome(String input) {
+
+        // Handle null or empty string
+        if (input == null) {
+            return false;
+        }
+
+        // Initialize pointers
+        int start = 0;
+        int end = input.length() - 1;
+
+        // Compare characters moving inward
+        while (start < end) {
+
+            if (input.charAt(start) != input.charAt(end)) {
+                return false;
+            }
+
+            start++;
+            end--;
+        }
+
+        return true;
     }
 }
