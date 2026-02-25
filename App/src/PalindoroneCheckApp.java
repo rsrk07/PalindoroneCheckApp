@@ -21,16 +21,13 @@
 
 import java.util.LinkedList;
 
-public class UseCase8PalindromeCheckerApp {
+public class PalindoroneCheckApp {
 
     /**
      * Application entry point for UC8
      * @param args Command-line arguments
      */
-    public static void main(String[] args) {
-
-        // Define the input string
-        String input = "level";
+    public static String check(String input){
 
         // Create LinkedList to store characters
         LinkedList<Character> list = new LinkedList<>();
@@ -41,7 +38,7 @@ public class UseCase8PalindromeCheckerApp {
         }
 
         // Flag to track palindrome state
-        boolean isPalindrome = true;
+        String isPalindrome = "true";
 
         // Compare characters from both ends
         while (list.size() > 1) {
@@ -50,11 +47,17 @@ public class UseCase8PalindromeCheckerApp {
             char last  = list.removeLast();
 
             if (first != last) {
-                isPalindrome = false;
+                isPalindrome = "false";
                 break;
             }
         }
+        return isPalindrome ;
+    }
+    public static void main(String[] args) {
 
+        // Define the input string
+        String input = "level";
+        String isPalindrome =check(input);
         // Display result
         System.out.println("Input : " + input);
         System.out.println("Is Palindrome? : " + isPalindrome);
