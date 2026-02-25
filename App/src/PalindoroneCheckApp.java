@@ -34,7 +34,9 @@ public class PalindoroneCheckApp {
 
         // Add each character to the linked list
         for (char c : input.toCharArray()) {
-            list.add(c);
+            if (c != ' ') {
+                list.add(c);
+            }
         }
 
         // Flag to track palindrome state
@@ -45,7 +47,6 @@ public class PalindoroneCheckApp {
 
             char first = list.removeFirst();
             char last  = list.removeLast();
-
             if (first != last) {
                 isPalindrome = "false";
                 break;
@@ -56,7 +57,7 @@ public class PalindoroneCheckApp {
     public static void main(String[] args) {
 
         // Define the input string
-        String input = "level";
+        String input = "a man a plan a canal panama";
         String isPalindrome =check(input);
         // Display result
         System.out.println("Input : " + input);
