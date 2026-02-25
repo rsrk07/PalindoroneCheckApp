@@ -5,4 +5,5 @@
 //uc4 character array based palindrome  
 //uc5 made staCK BASED PALINDROME  
 //uc6 Queue + Stack Based Palindrome Chek  
-//UC7 - Deque-Based Optimized Palindrome Checker
+//UC7 - Deque-Based Optimized Palindrome Checker  
+//UC8 - Linked List Based Palindrome Checker
